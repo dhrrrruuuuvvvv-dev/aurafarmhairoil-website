@@ -63,8 +63,21 @@ nav a:hover{color:var(--gold)}
 .product-copy p{color:var(--muted);margin-bottom:16px}
 .product-meta{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}
 .pill{border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:11px;color:var(--green)}
-.price{font-size:25px;font-weight:800;color:var(--green);margin:24px 0 14px}
+.price{font-size:25px;font-weight:800;color:var(--green);margin:24px 0 8px}
+.price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-mrp{text-decoration:line-through;color:var(--muted);font-size:14px;font-weight:500}
+.discount-badge{display:inline-block;background:var(--green);color:#fff;border-radius:999px;padding:4px 8px;font-size:10px;letter-spacing:.5px}
 .price-note{font-size:11px;color:var(--muted);margin-bottom:20px}
+.referral-note{background:var(--cream2);border:1px solid var(--line);padding:12px 14px;margin:16px 0 20px;font-size:12px;color:var(--green)}
+.referral-note strong{font-weight:800}
+.contact{padding:105px 0;background:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
+.contact-card{background:var(--cream);border:1px solid var(--line);padding:30px}
+.contact-list{display:grid;gap:16px}
+.contact-item strong{display:block;color:var(--green);font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.contact-item a,.contact-item span{color:var(--muted);font-size:14px}
+.contact-item a:hover{color:var(--gold)}
+.support-note{margin-top:22px;padding:15px;background:#fff;border-left:3px solid var(--gold);font-size:13px;color:var(--muted)}
 .buy-row{display:flex;gap:10px;flex-wrap:wrap}
 .quantity{display:flex;border:1px solid var(--line);border-radius:4px;height:48px;background:#fff}
 .quantity button{width:42px;border:0;background:none;color:var(--green);font-size:18px}
@@ -144,6 +157,7 @@ footer a{display:block;margin:7px 0}
   .story{padding:75px 0}.story-grid>div:last-child{padding:0}.story img{height:390px;border-radius:16px}
   .benefit-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
   .review-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:30px}
 }
 @media(max-width:560px){
   .container{width:min(100% - 28px,1160px)}
@@ -381,7 +395,7 @@ footer a{display:block;margin:7px 0}
       <a href="#benefits">Benefits</a>
       <a href="#ritual">How to use</a>
       <a href="#story">Our story</a>
-      <a href="#faq">FAQ</a>
+      <a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </nav>
     <div class="nav-right">
       <button class="bag" onclick="openCart()">Bag <span id="bagCount">0</span></button>
@@ -408,7 +422,7 @@ footer a{display:block;margin:7px 0}
   <div class="container">
     <div class="kicker">AURAFARM ritual</div>
     <h2 class="serif">Good hair starts at the roots.</h2>
-    <p>Nourish your scalp, care for your strands, and make hair oiling a calm, simple part of your routine.</p>
+    <p>Nourish your scalp, care for dry-feeling hair, and make coconut + fenugreek oiling a calm, simple part of your routine.</p>
   </div>
 </section>
 
@@ -425,26 +439,21 @@ footer a{display:block;margin:7px 0}
     <div class="product-copy">
       <div class="eyebrow">AURAFARM Hair Care</div>
       <h2>Coconut & Fenugreek Hair Oil</h2>
-      <p>A nourishing hair oil crafted with coconut oil and fenugreek to support healthier-looking, stronger-feeling hair and a well-nourished scalp.</p>
-      <p>Its lightweight formula helps nourish dry hair, improve the feel of the scalp, and reduce the appearance of dryness and flakiness associated with a dry scalp.</p>
-
+      <p>AURAFARM Coconut & Fenugreek Hair Oil is made for a nourishing hair-care ritual, helping hair feel softer, healthier-looking and stronger-feeling from regular care.</p>
+      <p>Coconut oil helps nourish dry-feeling hair, while fenugreek complements the ritual. Together, they are designed to support a cared-for scalp and help reduce the appearance of dryness and flakiness.</p>
       <div class="product-meta">
-        <span class="pill">100 ml</span><span class="pill">Coconut + Fenugreek</span><span class="pill">External use only</span>
+        <span class="pill">100 ml</span><span class="pill">Coconut + Fenugreek</span><span class="pill">Free Shipping</span><span class="pill">External use only</span>
       </div>
-
-      <div class="price" id="price">Price to be updated</div>
-      <div class="price-note">Set your final selling price in the code before launch.</div>
-
+      <div class="price-row"><div class="price" id="price">₹399</div><span class="price-mrp">MRP ₹599</span><span class="discount-badge">20% off with RISHIKA15</span></div>
+      <div class="price-note">Selling price ₹399 · Referral price ₹319.20 · COD & online payment available.</div>
+      <div class="referral-note"><strong>Creator referral:</strong> Use code <strong>RISHIKA15</strong> for 20% off your customer payment. The creator commission is calculated separately and is not added to your total.</div>
       <div class="buy-row">
-        <div class="quantity">
-          <button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button>
-        </div>
+        <div class="quantity"><button onclick="changeQty(-1)">−</button><span id="qty">1</span><button onclick="changeQty(1)">+</button></div>
         <button class="cta" onclick="addToCart()">Add to bag</button>
       </div>
     </div>
   </div>
 </section>
-
 <section class="benefits" id="benefits">
   <div class="container">
     <div class="section-title">
@@ -453,17 +462,16 @@ footer a{display:block;margin:7px 0}
       <p>A straightforward hair-oiling ritual designed for everyday care.</p>
     </div>
     <div class="benefit-grid">
-      <article class="benefit"><div class="icon">🥥</div><h3>Coconut Oil</h3><p>Helps nourish dry-feeling hair and supports a softer, healthier-looking finish.</p></article>
-      <article class="benefit"><div class="icon">🌿</div><h3>Fenugreek</h3><p>A familiar botanical ingredient used as part of a nourishing hair-care routine.</p></article>
-      <article class="benefit"><div class="icon">✨</div><h3>Everyday Care</h3><p>A simple ritual that fits easily into your regular hair-care routine.</p></article>
-      <article class="benefit"><div class="icon">🌱</div><h3>Scalp Care</h3><p>Helps keep the scalp feeling nourished, comfortable and cared for.</p></article>
+      <article class="benefit"><div class="icon">🥥</div><h3>Coconut Nourishment</h3><p>Helps nourish dry-feeling hair and supports a softer, healthier-looking finish.</p></article>
+      <article class="benefit"><div class="icon">🌿</div><h3>Fenugreek Care</h3><p>Complements the oiling ritual with a familiar botanical ingredient for regular hair care.</p></article>
+      <article class="benefit"><div class="icon">✨</div><h3>Healthier-Looking Hair</h3><p>Regular oiling helps hair feel nourished, cared for and stronger-feeling.</p></article>
+      <article class="benefit"><div class="icon">🌱</div><h3>Dryness & Flakiness</h3><p>Helps nourish a dry-feeling scalp and reduce the appearance of dryness and flakiness.</p></article>
     </div>
   </div>
 </section>
-
 <section class="strip">
   <div class="container strip-grid">
-    <div class="strip-item">100 ml</div><div class="strip-item">Coconut + Fenugreek</div><div class="strip-item">Simple Ritual</div><div class="strip-item">Made With Care</div>
+    <div class="strip-item">100 ml</div><div class="strip-item">₹399 · MRP ₹599</div><div class="strip-item">Free Shipping</div><div class="strip-item">24x7 Support</div>
   </div>
 </section>
 
@@ -494,29 +502,32 @@ footer a{display:block;margin:7px 0}
   </div>
 </section>
 
-<section class="reviews">
-  <div class="container">
-    <div class="section-title">
-      <div class="kicker">Community</div>
-      <h2 class="serif">Made for real routines.</h2>
-      <p>Replace these sample cards with your real customer reviews after you start receiving orders.</p>
-    </div>
-    <div class="review-grid">
-      <article class="review"><div class="stars">★★★★★</div><p>“The oiling routine feels simple and easy to keep up with.”</p><small>Sample review · Replace before launch</small></article>
-      <article class="review"><div class="stars">★★★★★</div><p>“Love the coconut and fenugreek combination and the clean packaging.”</p><small>Sample review · Replace before launch</small></article>
-      <article class="review"><div class="stars">★★★★★</div><p>“A nice addition to my weekly hair-care ritual.”</p><small>Sample review · Replace before launch</small></article>
-    </div>
-  </div>
-</section>
-
 <section class="faq" id="faq">
   <div class="container">
     <div class="section-title"><div class="kicker">Questions</div><h2 class="serif">Frequently asked.</h2></div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-q">How should I use AURAFARM? <span>+</span></button><div class="faq-a">Gently massage a small amount into your scalp and through your hair. Leave it on for around 30 minutes before washing with a gentle shampoo.</div></div>
-      <div class="faq-item"><button class="faq-q">How often should I oil my hair? <span>+</span></button><div class="faq-a">Use it according to what works comfortably for your hair and scalp as part of your regular routine.</div></div>
-      <div class="faq-item"><button class="faq-q">Is it suitable for dry hair? <span>+</span></button><div class="faq-a">The formula is designed to nourish dry-feeling hair and scalp and help reduce the appearance of dryness and flakiness.</div></div>
+      <div class="faq-item"><button class="faq-q">How should I use AURAFARM? <span>+</span></button><div class="faq-a">Massage a small amount into your scalp and through your hair. Leave it on for around 30 minutes before washing with a gentle shampoo.</div></div>
+      <div class="faq-item"><button class="faq-q">What payment options are available? <span>+</span></button><div class="faq-a">Cash on Delivery (COD) is available. Online payment is also available; payment instructions can be shared during order confirmation. A payment gateway is not built into this page yet.</div></div>
+      <div class="faq-item"><button class="faq-q">Is shipping free? <span>+</span></button><div class="faq-a">Yes. Shipping is free on AURAFARM orders.</div></div>
+      <div class="faq-item"><button class="faq-q">How do I use the referral code? <span>+</span></button><div class="faq-a">Enter <strong>RISHIKA15</strong> in the order form for 20% off the product price. The 15% creator commission is calculated separately from the customer's discounted payment.</div></div>
+      <div class="faq-item"><button class="faq-q">How can I contact AURAFARM? <span>+</span></button><div class="faq-a">Customer support is available 24x7 through WhatsApp at +91 6280013605 or +91 9015259010, or by email at aurafarmhairoil@gmail.com.</div></div>
+      <div class="faq-item"><button class="faq-q">What if I have an order or return issue? <span>+</span></button><div class="faq-a">For a damaged delivery, wrong item or other order issue, contact AURAFARM support promptly with your order details. Return/refund eligibility is subject to the applicable AURAFARM policy.</div></div>
       <div class="faq-item"><button class="faq-q">How much product is inside? <span>+</span></button><div class="faq-a">Each bottle contains 100 ml of AURAFARM Coconut & Fenugreek Hair Oil.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title"><div class="kicker">We are here to help</div><h2 class="serif">Contact AURAFARM.</h2><p>Questions about your order, product or delivery? Customer support is available 24x7.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card"><div class="contact-list">
+        <div class="contact-item"><strong>WhatsApp</strong><a href="https://wa.me/916280013605" target="_blank" rel="noopener">+91 6280013605</a><a href="https://wa.me/919015259010" target="_blank" rel="noopener">+91 9015259010</a></div>
+        <div class="contact-item"><strong>Email</strong><a href="mailto:aurafarmhairoil@gmail.com">aurafarmhairoil@gmail.com</a></div>
+        <div class="contact-item"><strong>Instagram</strong><a href="https://instagram.com/aurafarm_trusted" target="_blank" rel="noopener">@aurafarm_trusted</a></div>
+        <div class="contact-item"><strong>Address</strong><span>Mahi Hiran Gate, Jalandhar, Punjab – 144001</span></div>
+      </div></div>
+      <div class="contact-card"><div class="kicker">Customer care</div><h3 class="serif" style="font-size:32px;margin-bottom:12px">Order with confidence.</h3><p style="color:var(--muted);font-size:14px;line-height:1.7">COD and online payment are available, and shipping is free. For order changes, delivery questions or return/issue support, contact us through WhatsApp or email.</p><div class="support-note"><strong>Referral:</strong> RISHIKA15 gives customers 20% off. The creator commission is separate from the customer's payment.</div></div>
     </div>
   </div>
 </section>
@@ -530,9 +541,10 @@ footer a{display:block;margin:7px 0}
 
 <footer>
   <div class="container footer-grid">
-    <div><h3>AURAFARM</h3><p>Simple ingredients, honest care and a nourishing hair-oiling ritual for everyday life.</p></div>
-    <div><h3>Explore</h3><a href="#shop">Shop</a><a href="#benefits">Benefits</a><a href="#ritual">How to use</a><a href="#story">Our story</a></div>
-    <div><h3>Help</h3><a href="#faq">FAQ</a><a href="#" onclick="openCart();return false">Order</a><a href="#">Shipping</a><a href="#">Privacy</a></div>
+    <div><h3>AURAFARM</h3><p>Simple ingredients, honest care and a nourishing hair-oiling ritual for everyday life.</p><p style="margin-top:14px">100 ml · Coconut + Fenugreek · Free Shipping · 24x7 Support</p></div>
+    <div><h3>Shop</h3><a href="#shop">Hair Oil</a><a href="#benefits">Benefits</a><a href="#ritual">How to use</a><a href="#shop">Referral offer</a></div>
+    <div><h3>Help</h3><a href="#faq">FAQ</a><a href="#shop" onclick="openCart();return false">Order</a><a href="#contact">Shipping</a><a href="#faq">Returns & orders</a></div>
+    <div><h3>Contact & Policy</h3><a href="#contact">Contact</a><a href="mailto:aurafarmhairoil@gmail.com">Email</a><a href="https://instagram.com/aurafarm_trusted" target="_blank" rel="noopener">Instagram</a><a href="#faq">Policy information</a></div>
   </div>
   <div class="container footer-bottom">© 2026 AURAFARM. All rights reserved.</div>
 </footer>
@@ -546,91 +558,31 @@ footer a{display:block;margin:7px 0}
 </div>
 
 <script>
-/* ========= AURAFARM SETTINGS =========
-   Change these later before launch. */
-const PRODUCT_PRICE = 0; // Put your final price here, e.g. 499
-const WHATSAPP_NUMBER = "91XXXXXXXXXX"; // Replace with your WhatsApp number, e.g. 919876543210
-const PRODUCT_NAME = "AURAFARM Coconut & Fenugreek Hair Oil";
-
-let qty = 1;
-let cartQty = 0;
-
-function changeQty(n){
-  qty = Math.max(1, qty + n);
-  document.getElementById("qty").textContent = qty;
-}
-function addToCart(){
-  cartQty += qty;
-  document.getElementById("bagCount").textContent = cartQty;
-  renderCart();
-  openCart();
-}
-function removeOne(){
-  cartQty = Math.max(0, cartQty - 1);
-  document.getElementById("bagCount").textContent = cartQty;
-  renderCart();
-}
-function money(){
-  return PRODUCT_PRICE > 0 ? "₹" + (PRODUCT_PRICE * cartQty).toLocaleString("en-IN") : "Price to be updated";
-}
-function renderCart(){
-  const body = document.getElementById("cartBody");
-  if(!cartQty){
-    body.innerHTML = `<p style="color:var(--muted)">Your bag is empty.</p>`;
-    return;
-  }
-  body.innerHTML = `
-    <div class="cart-line">
-      <div><strong>${PRODUCT_NAME}</strong><small>100 ml · Quantity ${cartQty}</small></div>
-      <button onclick="removeOne()" style="border:0;background:none;color:var(--green)">Remove</button>
-    </div>
-    <div class="cart-total"><span>Total</span><span>${money()}</span></div>
-    <div class="notice">Checkout below is set up for your order details. Real online payment can be connected later.</div>
-    <form class="form" onsubmit="placeOrder(event)">
-      <label>Name</label><input id="customerName" required placeholder="Your name">
-      <label>Phone</label><input id="customerPhone" required inputmode="tel" placeholder="10-digit mobile number">
-      <label>Address</label><textarea id="customerAddress" required placeholder="House / street / area"></textarea>
-      <label>City</label><input id="customerCity" required placeholder="City">
-      <label>Pincode</label><input id="customerPin" required inputmode="numeric" placeholder="Pincode">
-      <label>Payment</label>
-      <select id="payment"><option>Cash on Delivery</option><option>Online payment — connect later</option></select>
-      <button class="cta" type="submit">Place Order</button>
-    </form>`;
-}
-function placeOrder(e){
-  e.preventDefault();
-  const name = document.getElementById("customerName").value.trim();
-  const phone = document.getElementById("customerPhone").value.trim();
-  const address = document.getElementById("customerAddress").value.trim();
-  const city = document.getElementById("customerCity").value.trim();
-  const pin = document.getElementById("customerPin").value.trim();
-  const payment = document.getElementById("payment").value;
-  const total = money();
-  const text = `AURAFARM ORDER%0A%0AProduct: ${PRODUCT_NAME}%0AQuantity: ${cartQty}%0ATotal: ${total}%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AAddress: ${encodeURIComponent(address)}%0ACity: ${encodeURIComponent(city)}%0APincode: ${encodeURIComponent(pin)}%0APayment: ${encodeURIComponent(payment)}`;
-  if(WHATSAPP_NUMBER.includes("X")){
-    alert("Order form works, but first replace WHATSAPP_NUMBER at the top of the code with your business WhatsApp number.");
-    return;
-  }
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text, "_blank");
-}
-function openCart(){ document.getElementById("cartOverlay").style.display="block"; renderCart(); }
-function closeCart(){ document.getElementById("cartOverlay").style.display="none"; }
-function setImage(src, btn){
-  document.getElementById("mainProductImage").src = src;
-  document.querySelectorAll(".gallery-thumbs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-}
-document.querySelectorAll(".faq-q").forEach(q=>{
-  q.addEventListener("click",()=>{
-    const item=q.parentElement;
-    item.classList.toggle("open");
-    q.querySelector("span").textContent=item.classList.contains("open")?"−":"+";
-  });
-});
-document.getElementById("cartOverlay").addEventListener("click",e=>{
-  if(e.target.id==="cartOverlay") closeCart();
-});
-renderCart();
+/* ========= AURAFARM BUSINESS SETTINGS ========= */
+const PRODUCT_PRICE=399, PRODUCT_MRP=599, REFERRAL_CODE="RISHIKA15", REFERRAL_DISCOUNT=.20, CREATOR_COMMISSION=.15;
+const WHATSAPP_NUMBER="916280013605", SUPPORT_WHATSAPP_2="919015259010", PRODUCT_NAME="AURAFARM Coconut & Fenugreek Hair Oil – 100 ml", SHIPPING_COST=0;
+let qty=1, cartQty=0, referralApplied=false;
+function changeQty(n){qty=Math.max(1,qty+n);document.getElementById("qty").textContent=qty}
+function addToCart(){cartQty+=qty;document.getElementById("bagCount").textContent=cartQty;renderCart();openCart()}
+function removeOne(){cartQty=Math.max(0,cartQty-1);document.getElementById("bagCount").textContent=cartQty;if(!cartQty)referralApplied=false;renderCart()}
+function money(v){return "₹"+Number(v).toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2})}
+function pricing(){const subtotal=PRODUCT_PRICE*cartQty,discount=referralApplied?subtotal*REFERRAL_DISCOUNT:0,total=subtotal-discount+SHIPPING_COST,creatorCommission=referralApplied?total*CREATOR_COMMISSION:0;return{subtotal,discount,total,creatorCommission}}
+function applyReferral(){const input=document.getElementById("referralCode"),msg=document.getElementById("referralMessage"),code=input.value.trim().toUpperCase();if(code===REFERRAL_CODE){referralApplied=true;msg.textContent="20% referral discount applied. Your price is ₹319.20 per bottle.";msg.style.color="var(--green)"}else{referralApplied=false;msg.textContent=code?"That referral code is not valid.":"Enter RISHIKA15 to receive 20% off.";msg.style.color="var(--muted)"}renderCart()}
+function renderCart(){const body=document.getElementById("cartBody");if(!cartQty){body.innerHTML='<p style="color:var(--muted)">Your bag is empty.</p>';return}const p=pricing();body.innerHTML=`
+<div class="cart-line"><div><strong>${PRODUCT_NAME}</strong><small>100 ml · Quantity ${cartQty}</small></div><button onclick="removeOne()" style="border:0;background:none;color:var(--green)">Remove</button></div>
+<div class="cart-total"><span>Subtotal</span><span>${money(p.subtotal)}</span></div><div class="cart-total" style="padding-top:0"><span>Referral discount</span><span>-${money(p.discount)}</span></div><div class="cart-total" style="padding-top:0"><span>Shipping</span><span>Free</span></div><div class="cart-total"><span>Total</span><span>${money(p.total)}</span></div>
+<div class="notice">COD and online payment are available. Online payment instructions can be shared during order confirmation; no payment gateway is embedded in this page yet.</div>
+<div class="notice">Use referral code <strong>RISHIKA15</strong> for 20% off. For one bottle: ₹399 → ₹319.20. Creator commission is calculated separately at 15% of the discounted customer payment.</div>
+<form class="form" onsubmit="placeOrder(event)">
+<label>Name</label><input id="customerName" required placeholder="Your name"><label>Phone</label><input id="customerPhone" required inputmode="tel" placeholder="10-digit mobile number"><label>Address</label><textarea id="customerAddress" required placeholder="House / street / area"></textarea><label>City</label><input id="customerCity" required placeholder="City"><label>Pincode</label><input id="customerPin" required inputmode="numeric" placeholder="Pincode">
+<label>Referral code (optional)</label><input id="referralCode" value="${referralApplied?REFERRAL_CODE:""}" placeholder="RISHIKA15" oninput="referralApplied=false"><button type="button" class="cta alt" onclick="applyReferral()">Apply 20% referral discount</button><div id="referralMessage" style="font-size:12px;color:var(--muted)">${referralApplied?"20% referral discount applied. Your price is ₹319.20 per bottle.":"Enter RISHIKA15 to receive 20% off."}</div>
+<label>Payment</label><select id="payment"><option>Cash on Delivery</option><option>Online payment</option></select><button class="cta" type="submit">Place Order</button></form>`}
+function placeOrder(e){e.preventDefault();const name=document.getElementById("customerName").value.trim(),phone=document.getElementById("customerPhone").value.trim(),address=document.getElementById("customerAddress").value.trim(),city=document.getElementById("customerCity").value.trim(),pin=document.getElementById("customerPin").value.trim(),payment=document.getElementById("payment").value,referral=document.getElementById("referralCode").value.trim().toUpperCase();if(referral===REFERRAL_CODE&&!referralApplied)applyReferral();const p=pricing(),lines=["AURAFARM ORDER","","Product: "+PRODUCT_NAME,"Quantity: "+cartQty,"Subtotal: "+money(p.subtotal),"Referral code: "+(referralApplied?REFERRAL_CODE:"None"),"Referral discount: "+money(p.discount),"Shipping: Free","Customer total: "+money(p.total),"","Name: "+name,"Phone: "+phone,"Address: "+address,"City: "+city,"Pincode: "+pin,"Payment: "+payment];window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(lines.join("\n")),"_blank")}
+function openCart(){document.getElementById("cartOverlay").style.display="block";renderCart()}
+function closeCart(){document.getElementById("cartOverlay").style.display="none"}
+function setImage(src,btn){document.getElementById("mainProductImage").src=src;document.querySelectorAll(".gallery-thumbs button").forEach(b=>b.classList.remove("active"));btn.classList.add("active")}
+document.querySelectorAll(".faq-q").forEach(q=>q.addEventListener("click",()=>{const item=q.parentElement;item.classList.toggle("open");q.querySelector("span").textContent=item.classList.contains("open")?"−":"+"}));
+document.getElementById("cartOverlay").addEventListener("click",e=>{if(e.target.id==="cartOverlay")closeCart()});renderCart();
 </script>
 </body>
 </html>
