@@ -70,7 +70,7 @@ nav a:hover{color:var(--gold)}
 .price-note{font-size:11px;color:var(--muted);margin-bottom:20px}
 .referral-note{background:var(--cream2);border:1px solid var(--line);padding:12px 14px;margin:16px 0 20px;font-size:12px;color:var(--green)}
 .referral-note strong{font-weight:800}
-.contact{padding:105px 0;background:var(--paper)}
+.contact{padding:105px 0;background:var(--paper)}.footer-compact{padding:42px 0 0}.footer-compact-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.35fr;gap:34px;padding-bottom:30px}.footer-compact h3{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 13px;color:var(--cream)}.footer-brand h3{font-size:18px;letter-spacing:2px}.footer-compact p,.footer-compact a,.footer-compact span{display:block;color:rgba(247,241,229,.72);font-size:11px;line-height:1.65;text-decoration:none}.footer-compact a:hover{color:var(--cream)}.footer-meta{display:flex;flex-wrap:wrap;gap:7px 16px;margin-top:14px}.footer-meta span{display:inline-block;font-size:10px}.footer-contact{display:grid;gap:4px}.footer-bottom{border-top:1px solid rgba(247,241,229,.14);padding:17px 0 20px;display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-bottom span{font-size:10px;color:rgba(247,241,229,.58)}.footer-social{margin-top:7px}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start}
 .contact-card{background:var(--cream);border:1px solid var(--line);padding:30px}
 .contact-list{display:grid;gap:16px}
@@ -158,6 +158,7 @@ footer a{display:block;margin:7px 0}
   .benefit-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
   .review-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:30px}
+  .footer-compact-grid{grid-template-columns:1fr 1fr;gap:24px;padding-bottom:24px}.footer-brand{grid-column:1/-1}.footer-bottom{align-items:flex-start;flex-direction:column;gap:5px}
 }
 @media(max-width:560px){
   .container{width:min(100% - 28px,1160px)}
@@ -538,14 +539,42 @@ footer a{display:block;margin:7px 0}
 </section>
 </main>
 
-<footer>
-  <div class="container footer-grid">
-    <div><h3>AURAFARM</h3><p>Simple ingredients, honest care and a nourishing hair-oiling ritual for everyday life.</p><p style="margin-top:14px">100 ml · Coconut + Fenugreek · Free Shipping · 24x7 Support</p></div>
-    <div><h3>Shop</h3><a href="#shop">Hair Oil</a><a href="#benefits">Benefits</a><a href="#ritual">How to use</a><a href="#shop">Referral offer</a></div>
-    <div><h3>Help</h3><a href="#faq">FAQ</a><a href="#shop" onclick="openCart();return false">Order</a><a href="#contact">Shipping</a><a href="#faq">Returns & orders</a></div>
-    <div><h3>Contact & Policy</h3><a href="#contact">Contact</a><a href="mailto:aurafarmhairoil@gmail.com">Email</a><a href="https://instagram.com/aurafarm_trusted" target="_blank" rel="noopener">Instagram</a><a href="#faq">Policy information</a></div>
+<footer class="footer-compact">
+  <div class="container footer-compact-grid">
+    <div class="footer-brand">
+      <h3>AURAFARM</h3>
+      <p>Coconut & Fenugreek Hair Oil</p>
+      <div class="footer-meta">
+        <span>Free Shipping</span><span>COD Available</span><span>Online Payment Available</span><span>Customer Support: 24/7</span>
+      </div>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <a href="#shop">Shop</a>
+      <a href="#story">About / Our Story</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div>
+      <h3>Help & Policies</h3>
+      <a href="#contact">Shipping & Returns</a>
+      <a href="#faq">Privacy Policy</a>
+      <a href="#faq">Order Information</a>
+      <a href="#shop" onclick="openCart();return false">Order Now</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <a href="https://wa.me/916280013605" target="_blank" rel="noopener">WhatsApp: +91 6280013605</a>
+      <a href="https://wa.me/919015259010" target="_blank" rel="noopener">WhatsApp: +91 9015259010</a>
+      <a href="mailto:aurafarmhairoil@gmail.com">Email: aurafarmhairoil@gmail.com</a>
+      <span>Address: Mahi Hiran Gate, Jalandhar, Punjab 144001</span>
+      <a class="footer-social" href="https://instagram.com/aurafarm_trusted" target="_blank" rel="noopener">Instagram: @aurafarm_trusted</a>
+    </div>
   </div>
-  <div class="container footer-bottom">© 2026 AURAFARM. All rights reserved.</div>
+  <div class="container footer-bottom">
+    <span>© 2026 AURAFARM. All rights reserved.</span>
+    <span>Coconut & Fenugreek Hair Oil · 100 ml</span>
+  </div>
 </footer>
 
 <div class="overlay" id="cartOverlay">
